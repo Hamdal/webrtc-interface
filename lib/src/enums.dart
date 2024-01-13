@@ -48,6 +48,10 @@ enum RTCIceConnectionState {
 enum RTCVideoViewObjectFit {
   RTCVideoViewObjectFitContain,
   RTCVideoViewObjectFitCover,
+  RTCVideoViewObjectFitFitWidth,
+  RTCVideoViewObjectFitFitHeight,
+  RTCVideoViewObjectFitFitFill,
+  RTCVideoViewObjectFitFitScaleDown,
 }
 
 enum RTCRtpMediaType {
