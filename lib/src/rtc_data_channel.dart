@@ -80,6 +80,9 @@ abstract class RTCDataChannel {
 
   int? get bufferedAmount;
 
+  /// Get the buffered amount from native DC.
+  Future<int> getBufferedAmount() => throw UnimplementedError();
+
   /// Set threshold to trigger onBufferedAmountLow callback
   int? bufferedAmountLowThreshold;
 

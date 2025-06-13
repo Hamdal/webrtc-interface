@@ -1,9 +1,21 @@
 # Changelog
 
 --------------------------------------------
-[1.2.1] - 2025-02-07
+[1.2.3] - 2025-04-29
 
-* feat: expose rtc video value (#30)
+* Media recording changes (#31).
+
+[1.2.2+hotfix.1] - 2025-03-24
+
+* rename getBufferAmount to getBufferedAmount.
+
+[1.2.2] - 2025-03-24
+
+* add getBufferedAmount for RTCDataChannel.
+
+[1.2.1+hotfix.1] - 2025-02-23
+
+* fix: make videoValue non nullable (#30)
 * fix: make optional cname in RTCRTCPParameters nullable (#27)
 
 [1.2.0] - 2024-04-08
