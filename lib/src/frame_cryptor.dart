@@ -9,6 +9,11 @@ enum Algorithm {
   kAesCbc,
 }
 
+enum KeyDerivationAlgorithm {
+  kPBKDF2,
+  HKDF,
+}
+
 class KeyProviderOptions {
   KeyProviderOptions({
     required this.sharedKey,
@@ -18,6 +23,7 @@ class KeyProviderOptions {
     this.failureTolerance = -1,
     this.keyRingSize = 16,
     this.discardFrameWhenCryptorNotReady = false,
+    this.keyDerivationAlgorithm = KeyDerivationAlgorithm.kPBKDF2,
   });
   bool sharedKey;
   Uint8List ratchetSalt;
@@ -29,6 +35,8 @@ class KeyProviderOptions {
   /// default is 16
   int keyRingSize;
   bool discardFrameWhenCryptorNotReady;
+  KeyDerivationAlgorithm keyDerivationAlgorithm;
+
   Map<String, dynamic> toJson() {
     return {
       'sharedKey': sharedKey,
@@ -39,6 +47,7 @@ class KeyProviderOptions {
       'failureTolerance': failureTolerance,
       'keyRingSize': keyRingSize,
       'discardFrameWhenCryptorNotReady': discardFrameWhenCryptorNotReady,
+      'keyDerivationAlgorithm': keyDerivationAlgorithm.index,
     };
   }
 }

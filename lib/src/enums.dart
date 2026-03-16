@@ -178,10 +178,12 @@ RTCPeerConnectionState peerConnectionStateForString(String? state) {
 }
 
 enum RTCDegradationPreference {
+  @Deprecated('DISABLED is Deprecated for RTCDegradationPreference')
   DISABLED,
   MAINTAIN_FRAMERATE,
   MAINTAIN_RESOLUTION,
   BALANCED,
+  MAINTAIN_FRAMERATE_AND_RESOLUTION,
 }
 
 /// Priority levels for RTP encoding, matching WebRTC's RTCPriorityType.
