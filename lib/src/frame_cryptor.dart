@@ -11,7 +11,7 @@ enum Algorithm {
 
 enum KeyDerivationAlgorithm {
   kPBKDF2,
-  HKDF,
+  kHKDF,
 }
 
 class KeyProviderOptions {

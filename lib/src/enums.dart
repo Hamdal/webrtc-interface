@@ -215,7 +215,8 @@ RTCPriorityType? rtcPriorityTypeForString(String? priority) {
 }
 
 final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
-  RTCDegradationPreference.DISABLED: 'disabled',
+  RTCDegradationPreference.MAINTAIN_FRAMERATE_AND_RESOLUTION:
+      'maintain-framerate-and-resolution',
   RTCDegradationPreference.MAINTAIN_FRAMERATE: 'maintain-framerate',
   RTCDegradationPreference.MAINTAIN_RESOLUTION: 'maintain-resolution',
   RTCDegradationPreference.BALANCED: 'balanced',
@@ -223,8 +224,8 @@ final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
 
 RTCDegradationPreference degradationPreferenceforString(String? degradation) {
   switch (degradation) {
-    case 'disabled':
-      return RTCDegradationPreference.DISABLED;
+    case 'maintain-framerate-and-resolution':
+      return RTCDegradationPreference.MAINTAIN_FRAMERATE_AND_RESOLUTION;
     case 'maintain-framerate':
       return RTCDegradationPreference.MAINTAIN_FRAMERATE;
     case 'maintain-resolution':

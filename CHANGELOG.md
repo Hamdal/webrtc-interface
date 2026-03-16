@@ -1,6 +1,12 @@
 # Changelog
 
 --------------------------------------------
+[1.5.1] - 2026-03-16
+
+* Fixed name for KeyDerivationAlgorithm.
+* Fixed string convert for RTCDegradationPreference.
+
+
 [1.5.0] - 2026-03-16
 
 * Update enum RTCDegradationPreference.
