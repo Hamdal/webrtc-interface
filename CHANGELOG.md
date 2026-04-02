@@ -1,6 +1,22 @@
 # Changelog
 
 --------------------------------------------
+[1.5.1] - 2026-03-16
+
+* Fixed name for KeyDerivationAlgorithm.
+* Fixed string convert for RTCDegradationPreference.
+
+
+[1.5.0] - 2026-03-16
+
+* Update enum RTCDegradationPreference.
+* Add enum KeyDerivationAlgorithm to KeyProviderOptions.
+
+--------------------------------------------
+[1.4.0] - 2026-01-22
+
+* Priority control APIs.
+
 [1.3.0] - 2025-09-09
 
 * Data packet cryptor interface.

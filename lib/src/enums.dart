@@ -182,14 +182,45 @@ RTCPeerConnectionState peerConnectionStateForString(String? state) {
 }
 
 enum RTCDegradationPreference {
+  @Deprecated('DISABLED is Deprecated for RTCDegradationPreference')
   DISABLED,
   MAINTAIN_FRAMERATE,
   MAINTAIN_RESOLUTION,
   BALANCED,
+  MAINTAIN_FRAMERATE_AND_RESOLUTION,
+}
+
+/// Priority levels for RTP encoding, matching WebRTC's RTCPriorityType.
+/// Used for both `priority` and `networkPriority` in RTCRtpEncodingParameters.
+enum RTCPriorityType {
+  veryLow,
+  low,
+  medium,
+  high,
+}
+
+final typeRTCPriorityTypeString = <RTCPriorityType, String>{
+  RTCPriorityType.veryLow: 'very-low',
+  RTCPriorityType.low: 'low',
+  RTCPriorityType.medium: 'medium',
+  RTCPriorityType.high: 'high',
+};
+
+final typeStringToRTCPriorityType = <String, RTCPriorityType>{
+  'very-low': RTCPriorityType.veryLow,
+  'low': RTCPriorityType.low,
+  'medium': RTCPriorityType.medium,
+  'high': RTCPriorityType.high,
+};
+
+RTCPriorityType? rtcPriorityTypeForString(String? priority) {
+  if (priority == null) return null;
+  return typeStringToRTCPriorityType[priority];
 }
 
 final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
-  RTCDegradationPreference.DISABLED: 'disabled',
+  RTCDegradationPreference.MAINTAIN_FRAMERATE_AND_RESOLUTION:
+      'maintain-framerate-and-resolution',
   RTCDegradationPreference.MAINTAIN_FRAMERATE: 'maintain-framerate',
   RTCDegradationPreference.MAINTAIN_RESOLUTION: 'maintain-resolution',
   RTCDegradationPreference.BALANCED: 'balanced',
@@ -197,8 +228,8 @@ final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
 
 RTCDegradationPreference degradationPreferenceforString(String? degradation) {
   switch (degradation) {
-    case 'disabled':
-      return RTCDegradationPreference.DISABLED;
+    case 'maintain-framerate-and-resolution':
+      return RTCDegradationPreference.MAINTAIN_FRAMERATE_AND_RESOLUTION;
     case 'maintain-framerate':
       return RTCDegradationPreference.MAINTAIN_FRAMERATE;
     case 'maintain-resolution':
